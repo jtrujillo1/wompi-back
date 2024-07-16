@@ -4,6 +4,7 @@ import { EnvironmentSchema } from './core/validators/environment.scheme';
 import { ConsoleModule } from './core/console/console.module';
 import { DatabaseModule } from './core/database/database.module';
 import { OrderModule } from './modules/order/order.module';
+import { ProductModule } from './modules/product/product.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { OrderModule } from './modules/order/order.module';
     ConsoleModule,
     DatabaseModule,
     OrderModule,
+    ProductModule,
   ],
   controllers: [],
   providers: [],

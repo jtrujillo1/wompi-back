@@ -14,6 +14,8 @@ export class Delivery extends Model<
   declare id: CreationOptional<string>;
   declare payerId: CreationOptional<string>;
   declare status: number;
+  declare address: string;
+  declare city: string;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
 
@@ -34,6 +36,14 @@ export class Delivery extends Model<
         },
         status: {
           type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        city: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        address: {
+          type: DataTypes.STRING,
           allowNull: false,
         },
         createdAt: {

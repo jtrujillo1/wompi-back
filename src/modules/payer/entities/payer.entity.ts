@@ -28,6 +28,7 @@ export class Payer extends Model<
 > {
   declare id: CreationOptional<string>;
   declare name: string;
+  declare email: string;
   declare status: number;
   declare address: string;
   declare createdAt: CreationOptional<Date>;
@@ -62,6 +63,11 @@ export class Payer extends Model<
         name: {
           type: DataTypes.STRING,
           allowNull: false,
+        },
+        email: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          unique: true,
         },
         status: {
           type: DataTypes.INTEGER,

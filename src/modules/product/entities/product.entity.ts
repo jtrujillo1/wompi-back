@@ -13,7 +13,6 @@ import {
 } from 'sequelize';
 import { Stock } from 'src/modules/stock/entities/stock.entity';
 
-
 type ProductAssociations = 'stock';
 
 export class Product extends Model<
@@ -23,6 +22,7 @@ export class Product extends Model<
   declare id: CreationOptional<string>;
   declare status: number;
   declare name: string;
+  declare image: string;
   declare price: number;
   declare description: string | null;
   declare createdAt: CreationOptional<Date>;
@@ -53,6 +53,10 @@ export class Product extends Model<
         },
         name: {
           type: DataTypes.STRING(50),
+          allowNull: false,
+        },
+        image: {
+          type: DataTypes.STRING(100),
           allowNull: false,
         },
         price: {

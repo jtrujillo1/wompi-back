@@ -21,25 +21,25 @@ export function initModels(sequelize: Sequelize) {
   Order.belongsToMany(Product, {
     as: 'products',
     through: OrderProduct,
-    foreignKey: 'product_id',
-    otherKey: 'order_id',
+    foreignKey: 'productId',
+    otherKey: 'orderId',
     onDelete: 'CASCADE',
   });
   Order.belongsTo(Payment, {
     as: 'payment',
-    foreignKey: 'payment_id',
+    foreignKey: 'paymentId',
   });
   Order.belongsTo(Payer, {
     as: 'payer',
-    foreignKey: 'payer_id',
+    foreignKey: 'payerId',
   });
   Product.belongsTo(Stock, {
     as: 'stock',
-    foreignKey: 'product_id',
+    foreignKey: 'productId',
   });
   Payer.hasMany(Delivery, {
     as: 'deliveries',
-    foreignKey: 'payer_id',
+    foreignKey: 'payerId',
   });
 
   return {
